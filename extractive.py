@@ -1,6 +1,7 @@
 import numpy as np
 import re
 from operator import itemgetter
+np.seterr(divide='ignore', invalid='ignore')
 
 # Cosine Similarity = cos(theta) = (A . B) / (||A|| ||B||)
 def cosineSimilarity(vector1, vector2):
@@ -73,7 +74,10 @@ def buildSimilarityMatrix(sentences, stopwords=None):
  
     # normalize the matrix row-wise
     for index in range(len(S)):
-        S[index] /= S[index].sum()
+        if S[index].sum() > 0:
+            S[index] /= S[index].sum()
+        else:
+            S[index] = 1
  
     return S
 
@@ -87,6 +91,8 @@ def ranking(A, eps=0.0001, d=0.85):
         delta = abs((newP - P).sum())
         if delta <= eps:
             return newP
+        if not np.isfinite(newP).all():
+        	return newP
         P = newP
 
 # Function to calculate the ranks of the most important sentences in the text
