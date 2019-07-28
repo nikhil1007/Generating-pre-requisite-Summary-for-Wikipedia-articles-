@@ -1,4 +1,4 @@
-## Welcome to GitHub Pages
+## Documentation to be added.
 
 You can use the [editor on GitHub](https://github.com/avinashbhat/wikicontext/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
