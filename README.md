@@ -1,37 +1,16 @@
-## Documentation to be added.
+## WikiContext
 
-You can use the [editor on GitHub](https://github.com/avinashbhat/wikicontext/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Wikipedia articles are hardly lucid. There is always some kind of jargon which floats around, which is difficult to understand in layman's term. This is an attempt to simplify the understanding of any Wikipedia article by providing a summary of some of the key concepts of the said article.
+We provide the context, hence the name WikiContext.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Visit [WikiContext](https://jekyllrb.com/) to get some context.
 
-### Markdown
+### Beneath the hood
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+WikiContext makes use of extractive text summarization, using [TextRank](https://www.aclweb.org/anthology/W04-3252). First step is to define a keyword list based on the hyperlinks present in the article. Once this is done, based on [keyword ranking](http://ceur-ws.org/Vol-706/poster13.pdf), we identify the most relevent keywords in the article. Then the data is fetched and the summarization is performed.
 
-```markdown
-Syntax highlighted code block
+### Usage
+WikiContext has two types of searches - linear and recommended. Recommended is, as name suggests, waht we recommend. This has a more stringent criteria for the keyword search and we can assure you that this will usually suffice. However, if you are not satisfied with the results, you can try the linear search which will provide you with more results. 
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/avinashbhat/wikicontext/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+### Contributing
+No work is going on in this project as of now. If you want to take it forward, please add an issue and send a PR. 
